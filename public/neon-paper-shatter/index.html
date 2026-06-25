@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Paper Shatter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="game-canvas" width="1280" height="720" aria-label="Neon Paper Shatter explorable game world"></canvas>
+
+    <section id="start-panel" class="panel panel-start">
+      <div class="brand-row">
+        <span class="brand-mark"></span>
+        <span>Neon Paper Shatter</span>
+      </div>
+      <h1>Turn the loud thoughts into light.</h1>
+      <p class="lead">Type anxieties, one per line. They become neon monsters in the city, ready to slash, pierce, shred, and release.</p>
+      <textarea id="anxiety-input" spellcheck="true">What if I fail?
+I have too much to do
+People will judge me</textarea>
+      <div class="button-row">
+        <button id="start-btn" class="primary-button">Begin Release</button>
+        <button id="sample-btn" class="secondary-button" aria-label="Load sample anxieties">Samples</button>
+      </div>
+      <div class="control-strip">
+        <span>Move: WASD / arrows</span>
+        <span>Attack: Space / click</span>
+        <span>Weapons: 1 / 2 / 3</span>
+        <span>Fullscreen: F</span>
+      </div>
+    </section>
+
+    <section id="result-panel" class="panel panel-results hidden">
+      <div class="brand-row">
+        <span class="brand-mark"></span>
+        <span>Session Complete</span>
+      </div>
+      <h2>You cleared the board.</h2>
+      <p class="lead">The notes are quieter now. Keep the reframes that feel useful; leave the rest here.</p>
+      <div id="reframe-list" class="reframe-list"></div>
+      <div class="button-row">
+        <button id="again-btn" class="primary-button">Play Again</button>
+      </div>
+    </section>
+
+    <div id="hud" class="hud hidden">
+      <div>
+        <span class="hud-label">Released</span>
+        <strong id="released-count">0 / 0</strong>
+      </div>
+      <div>
+        <span class="hud-label">Current</span>
+        <strong id="current-thought">Find the nearest note</strong>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
